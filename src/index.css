@@ -3,9 +3,9 @@ html, body {
   height: 100%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c1dfc4+0,deecdd+100 */
   background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #434c4d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#434c4d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #434c4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
 }
 
@@ -100,26 +100,7 @@ code {
   cursor: pointer;
 }
 
-.navbar {
-  margin-left:-20px !important;
-  margin-right:-20px !important;  
-  margin-top: -35px !important;
-  }
-
-  .home-grid {
-    text-align: center
-  }
-
-  .home-section1 {
-    background-color: rgb(230, 236, 240);
-    height: 1000px
-    
-  }
-
-.home-section3 {
-  background-color: rgb(230, 236, 240)
-  }
-
+  
   .modal-dialog {
     position: absolute;
     z-index: 99 !important;
@@ -149,39 +130,6 @@ code {
    margin-right: 50px
  }
  
- .profile-snippet {
-   background-color: white;
-   width: 330px;
-   height: 200px;
-   margin-top: 20px;
-   display: flex;
-   justify-content: space-between
- }
-
- .hot-stocks {
-  
-     background-color: white;
-     width: 330px;
-     height: 450px;
-     margin-top: 40px;
-   
- }
-
- .profile-snippet img {
-   height: 50px; 
-   width: 50px;
-   border-radius: 50%;
-   margin-top: 10px;
-   
- }
-
- .profile-snippet .user-username {
-  
- }
-
- .profile-snippet .user-email {
-   margin-top: 30px
- }
 
  .twPc-div {
   background: #fff none repeat scroll 0 0;
@@ -189,7 +137,7 @@ code {
   border-radius: 6px;
   height: 200px;
   max-width: 340px; 
-  margin-top: 20px
+  margin-top: 0px
 }
 .twPc-bg {
   background-color:grey  ; 
@@ -275,6 +223,145 @@ ul.twPc-Arrange {
   overflow: hidden;
   text-transform: uppercase;
   transition: color 0.15s ease-in-out 0s;
+}
+
+.home {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #434c4d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#434c4d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%,#434c4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
+}
+
+
+.hotstocks {
+  
+  height: 500px;
+  width: 325px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px
+  
+}
+
+.coldstocks {
+  
+  height: 500px;
+  width: 325px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px
+}
+
+.recommended {
+  
+  height: 200px;
+  width: 325px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px
+}
+
+.profile-snippet {
+  
+  height: 200px;
+  width: 325px;
+  margin-top: 10px;
+  background-color: white;
+  
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+}
+
+.left-column {
+  height: 1000px;
+  width: 340px;
+  order: 1;
+  align-items: left;
+ 
+}
+
+.center-column {
+  height: 1000px;
+  width: 680px;
+  
+  order: 2;
+ 
+  
+}
+
+
+.right-column {
+  height: 1000px;
+  width: 340px;
+  margin-left: 80px;
+  order: 3;
+}
+
+.pick-snippet {
+
+  height: 200px;
+  width: 640px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 60px;
+  
+}
+
+.stock-snippet {
+  height: 200px;
+  width: 640px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 60px;
+}
+
+.rank-snippet {
+  height: 200px;
+  width: 640px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 60px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 250px;
+  border: 2px solid black;
+}
+
+.profile-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between
+}
+
+.profile-left {
+  order: 1;
+  width: 340px;
+  height: 250px;
+  border: 2px solid black;
+}
+.profile-center {
+  order: 2;
+  width: 680px;
+  height: 1000px;
+  border: 2px solid black;
+}
+.profile-right {
+  order: 3;
+  width: 340px;
+  height: 250px;
+  border: 2px solid black;
 }
 
 

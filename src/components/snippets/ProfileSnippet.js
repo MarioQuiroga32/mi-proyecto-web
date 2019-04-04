@@ -3,25 +3,22 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 
 
-class LeftColumn extends Component {
+class ProfileSnippet extends Component {
   state = {
     user: {
       email: '',
       password: '',
       username: '',
       name: ''
-    },
-    errors: {},
-    touch: {},
-    isRegistered: false
+    }
+    
   }
   
   render() {
     const { user } = this.props
 
     return (
-      <div className="home-row row home-grid">
-      <div className="col-md-3 home-section1">
+      <div className="profile-snippet">
        
     <div class="twPc-div">
     <a class="twPc-bg twPc-block"></a>
@@ -34,7 +31,7 @@ class LeftColumn extends Component {
             
     </div>
   
-    <a title="Mert S. Kaplan" href="/profile" class="twPc-avatarLink">
+    <a title="Mert S. Kaplan" href="/editprofile" class="twPc-avatarLink">
       <img alt="Mert S. Kaplan" src="download.png" class="twPc-avatarImg"/>
     </a>
   
@@ -76,19 +73,9 @@ class LeftColumn extends Component {
           <a href=""></a>
         </div>
         </div>
-        </div>
-  
-      
-  
-    
-  
-      
-
-    
-
-      
-    );
+       
+   );
   }
 }
 
-export default withAuthConsumer(withRouter(LeftColumn));
+export default withAuthConsumer(withRouter(ProfileSnippet));

@@ -1,7 +1,7 @@
 import http from './BaseService';
 
-const listUsers = (user) => http.get('/users', user)
-  .then(res => Promise.resolve(res.data));
+const listUsers = (users) => http.get('/users', users)
+  .then(res => res.data);
 
 
 export default {
