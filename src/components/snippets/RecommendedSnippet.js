@@ -9,7 +9,7 @@ class ProperListRender extends Component{
   state = {
     user: {
       name: '',
-      username: ''
+      username: '',
     },
     usersList: []
   }
@@ -21,10 +21,22 @@ class ProperListRender extends Component{
 
   setUsers = usersList => this.setState({ usersList })
 
+  onClickFollow() {
+    
+  }
+
   render () {
     return (
       <ul>
-        {this.state.usersList.map(x => <h6>{x.email}</h6>)}
+        {this.state.usersList.map(x => 
+        <div className="recommended-card">
+       <h6>{x.email}</h6>
+        <button className="btn-follow" onClick={this.onClickFollow}>Follow</button>
+        </div>
+        
+        
+        )
+        }
       </ul>
 
     )
@@ -36,7 +48,8 @@ class RecommendedSnippet extends Component {
 
   render() {
     return (
-      <div className="recommended"><ProperListRender usersList/></div>
+      <div className="recommended">
+      <ProperListRender usersList/></div>
    );
   }
 }

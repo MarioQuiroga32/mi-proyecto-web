@@ -3,10 +3,19 @@ html, body {
   height: 100%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c1dfc4+0,deecdd+100 */
   background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #434c4d 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#434c4d 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%, #434c4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*background: -moz-linear-gradient(top, #ffffff 0%, #2dbdbd 100%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top, #ffffff 0%,#2dbdbd 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom, #ffffff 0%, #2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-color: #2dbdbd;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar {
+  margin-top: -48px;
+  justify-content: stretch;
+  width: 1440px;
+  margin-left: -15px
+
 }
 
 code {
@@ -227,9 +236,9 @@ ul.twPc-Arrange {
 
 .home {
   background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #434c4d 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#434c4d 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%,#434c4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #2dbdbd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#2dbdbd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%,#2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
 }
 
@@ -259,7 +268,9 @@ ul.twPc-Arrange {
   width: 325px;
   margin-top: 10px;
   background-color: white;
-  border-radius: 5px
+  border-radius: 5px;
+  overflow: auto;    
+  scrollbar-base-color:#ffeaff
 }
 
 .profile-snippet {
@@ -275,6 +286,7 @@ ul.twPc-Arrange {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-between
   
 }
 
@@ -289,8 +301,8 @@ ul.twPc-Arrange {
 .center-column {
   height: 1000px;
   width: 680px;
-  
   order: 2;
+  margin-left: 70px
  
   
 }
@@ -299,7 +311,7 @@ ul.twPc-Arrange {
 .right-column {
   height: 1000px;
   width: 340px;
-  margin-left: 80px;
+  margin-left: 50px;
   order: 3;
 }
 
@@ -310,7 +322,6 @@ ul.twPc-Arrange {
   margin-top: 10px;
   background-color: white;
   border-radius: 5px;
-  margin-left: 60px;
   
 }
 
@@ -320,7 +331,6 @@ ul.twPc-Arrange {
   margin-top: 10px;
   background-color: white;
   border-radius: 5px;
-  margin-left: 60px;
 }
 
 .rank-snippet {
@@ -329,13 +339,13 @@ ul.twPc-Arrange {
   margin-top: 10px;
   background-color: white;
   border-radius: 5px;
-  margin-left: 60px;
 }
 
 .thumbnail {
   width: 100%;
   height: 250px;
   border: 2px solid black;
+  display: flex
 }
 
 .profile-columns {
@@ -355,13 +365,44 @@ ul.twPc-Arrange {
   order: 2;
   width: 680px;
   height: 1000px;
-  border: 2px solid black;
+  margin-left: 10px
 }
 .profile-right {
   order: 3;
   width: 340px;
   height: 250px;
+}
+
+.profile-avatar {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin: 20px;
+  margin-top: 100px
+}
+
+.thumbnail-button {
+  height: 30px;
+  width: 100px;
+  margin-top: 170px;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: none;
+  height: 120px;
+  width: 120px;
+}
+
+.recommended-card {
+  width: 100%;
+  height: 70px;
   border: 2px solid black;
+  margin-right: 50px;
+}
+
+.btn-follow {
+  display: inline;
 }
 
 

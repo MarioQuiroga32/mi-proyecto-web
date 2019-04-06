@@ -46,7 +46,12 @@ class NavBar extends Component {
               <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/rank">Rank</NavLink></li>
             </ul>
 
-            <button onClick={this.toggleModalVisibility} type="button" class="newpick-btn btn btn-primary btn-large" data-toggle="modal" data-target="#myModal">
+            <form className="form-inline active-cyan-3 active-cyan-4">
+            <i className="fa fa-search" aria-hidden="true"></i>
+            <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
+          </form>
+
+            <button onClick={this.toggleModalVisibility} type="button" className="newpick-btn btn btn-primary btn-large" data-toggle="modal" data-target="#myModal">
               New pick
             </button>
 

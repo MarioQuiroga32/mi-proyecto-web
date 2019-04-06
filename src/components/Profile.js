@@ -14,11 +14,31 @@ class Profile extends Component {
     return (
       <div className="profile">
       <Navbar />
-      <div className="thumbnail"></div>
+      
+      <div className="thumbnail">
+      <div className="profile-avatar"> 
+      <a title="Mert S. Kaplan" href="/editprofile" className="avatar">
+      <img alt="Mert S. Kaplan" src="http://ecuciencia.utc.edu.ec/media/foto/default-user_x5fGYax.png" className="avatar"/>
+    </a>
+      </div>
+      <div className="thumbnail-button btn">
+      <button>Follow</button>
+      </div>
+      </div>
+
+
       <div className="profile-columns">
       <div className="profile-left"></div>
-      <div className="profile-center"></div>
-      <div className="profile-right"></div>
+     
+      <div className="profile-center">
+      <PickSnippet/>
+      <PickSnippet/>
+      <PickSnippet/>
+      </div>
+      
+      <div className="profile-right">
+      <RecommendedSnippet/>
+      </div>
       </div>
      
       </div>    

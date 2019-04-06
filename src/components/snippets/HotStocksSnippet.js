@@ -7,7 +7,10 @@ class HotStocksSnippet extends Component {
   
   render() {
     return (
-      <div className="hotstocks">Hot Stocks</div>
+      <div className="hotstocks">
+      Hot Stocks
+      <div></div>
+      </div>
    );
   }
 }
