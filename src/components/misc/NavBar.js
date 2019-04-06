@@ -31,9 +31,9 @@ class NavBar extends Component {
     return (
       <div>
         {showModal && <Modal />}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg">
           
-          <Link className="navbar-brand" to="/board">MiProyecto</Link>
+          <Link className="navbar-brand" to="/home">MiProyecto</Link>
           
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
@@ -64,7 +64,7 @@ class NavBar extends Component {
               )}
               {user.email && (
                 <Fragment>
-                  <li className="nav-item"><a href="/editprofile" className="nav-link">{user.email}</a></li>
+                  <li className="nav-item"><a href="/profile/:id" className="nav-link">{user.email}</a></li>
                   <li className="nav-item"><a href="/" className="nav-link" onClick={this.handleLogout}>Logout</a></li>
                 </Fragment>
               )}

@@ -21,18 +21,7 @@ class ProfileSnippet extends Component {
           <a className="twPc-bg twPc-block" />
 
           <div>
-            <div className="twPc-button">
-              <a
-                href="https://twitter.com/mertskaplan"
-                className="twitter-follow-button"
-                data-show-count="false"
-                data-size="large"
-                data-show-screen-name="false"
-                data-dnt="true" >
-                Follow @{user.username}
-              </a>
-            </div>
-
+           
             <a
               title="Mert S. Kaplan"
               href="/editprofile"
@@ -49,8 +38,8 @@ class ProfileSnippet extends Component {
                 <a href="https://twitter.com/mertskaplan" />
               </div>
               <span>
-                <a href="/profile">
-                  @<span />
+                <a className="profile-username" href="/profile">
+                  @{user.email}<span />
                 </a>
               </span>
             </div>

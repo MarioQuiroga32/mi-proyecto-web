@@ -6,7 +6,7 @@ html, body {
   /*background: -moz-linear-gradient(top, #ffffff 0%, #2dbdbd 100%); /* FF3.6-15 */
   /*background: -webkit-linear-gradient(top, #ffffff 0%,#2dbdbd 100%); /* Chrome10-25,Safari5.1-6 */
   /*background: linear-gradient(to bottom, #ffffff 0%, #2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background-color: #2dbdbd;
+  background-color: #c5beba;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
   position: fixed;
 }
@@ -15,9 +15,22 @@ html, body {
   margin-top: -48px;
   justify-content: stretch;
   width: 1440px;
-  margin-left: -15px
+  margin-left: -15px;
+  background-color: #113743;
+  color: #c5beba !important;
+}
+
+.navbar-brand {
+  color: #c5beba !important;
+}
+
+input {
+  background-color: #c5beba !important;
+  border-color: #c5beba
 
 }
+
+.nav-link {color: #c5beba !important;}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -137,12 +150,15 @@ code {
  }
 
  .newpick-btn {
-   margin-right: 50px
+   margin-right: 50px;
+   color: #e4e3db !important;
+   background-color: #c5001a;
+   border-color: #c5001a
  }
  
 
  .twPc-div {
-  background: #fff none repeat scroll 0 0;
+  background: #e4e3db none repeat scroll 0 0;
   border: 1px solid #e1e8ed;
   border-radius: 6px;
   height: 200px;
@@ -166,9 +182,14 @@ code {
   text-align: right;
   width: 100%;
 }
+
+.profile-username {
+  color: #113743 !important
+}
+
 .twPc-avatarLink {
-  background-color: #fff;
-  border-radius: 6px;
+  background-color: #c5beba;
+  border-radius: 50%;
   display: inline-block !important;
   float: left;
   margin: -30px 5px 0 8px;
@@ -178,7 +199,7 @@ code {
 }
 .twPc-avatarImg {
   border: 2px solid #fff;
-  border-radius: 7px;
+  border-radius: 50%;
   box-sizing: border-box;
   color: #fff;
   height: 72px;
@@ -206,11 +227,13 @@ code {
   min-width: 100%;
   padding: 0;
   table-layout: auto;
+  
 }
 ul.twPc-Arrange {
   list-style: outside none none;
   margin: 0;
   padding: 0;
+  
 }
 .twPc-ArrangeSizeFit {
   display: table-cell;
@@ -225,6 +248,7 @@ ul.twPc-Arrange {
   font-size: 18px;
   font-weight: 500;
   transition: color 0.15s ease-in-out 0s;
+  color: #c5001a
 }
 .twPc-StatLabel {
   color: #8899a6;
@@ -237,9 +261,10 @@ ul.twPc-Arrange {
 
 .home {
   background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #2dbdbd 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#2dbdbd 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%,#2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*background: /*-moz-linear-gradient(top, #ffffff 0%, #2dbdbd 100%); /* FF3.6-15 */
+  /*background: /*-webkit-linear-gradient(top, #ffffff 0%,#2dbdbd 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: /*linear-gradient(to bottom, #ffffff 0%,#2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-color: #c5beba;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
 }
 
@@ -249,7 +274,7 @@ ul.twPc-Arrange {
   height: 500px;
   width: 325px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px
   
 }
@@ -259,7 +284,7 @@ ul.twPc-Arrange {
   height: 500px;
   width: 325px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px
 }
 
@@ -268,10 +293,10 @@ ul.twPc-Arrange {
   height: 200px;
   width: 325px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px;
   overflow: auto;    
-  scrollbar-base-color:#ffeaff
+  scrollbar-base-color:#e4e3db
 }
 
 .profile-snippet {
@@ -279,7 +304,7 @@ ul.twPc-Arrange {
   height: 200px;
   width: 325px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   
 }
 
@@ -305,7 +330,7 @@ ul.twPc-Arrange {
   order: 2;
   margin-left: 70px;
   overflow: scroll;    
-  scrollbar-base-color:#ffeaff;
+  scrollbar-base-color:#e4e3db;
 }
 
 
@@ -321,7 +346,7 @@ ul.twPc-Arrange {
   height: 200px;
   width: 640px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px;
   
 }
@@ -330,7 +355,7 @@ ul.twPc-Arrange {
   height: 200px;
   width: 640px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px;
 }
 
@@ -338,7 +363,7 @@ ul.twPc-Arrange {
   height: 200px;
   width: 640px;
   margin-top: 10px;
-  background-color: white;
+  background-color: #e4e3db;
   border-radius: 5px;
 }
 

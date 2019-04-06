@@ -1,0 +1,32 @@
+{
+  "apple": [
+    {
+      open: 1234,
+      cloase: 123
+    },
+    {
+      open: 1234,
+      cloase: 123
+    }
+  ],
+  "pepe": [
+
+  ]
+}
+
+Stock.find({ creatAt: { $gte: new Date() }})
+  .then(stocks => {
+    stocks.reduce((stocks, stock) => {
+      if (!stocks[stock.symbol]) {
+        stocks[stock.symbol] = [];
+      }
+      stocks[stock.symbol].push(stock);
+      return stocks;
+    }, {})
+  })
+
+[
+  {
+    symbol: 'apple'
+  }
+]

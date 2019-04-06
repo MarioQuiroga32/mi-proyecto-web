@@ -7,9 +7,9 @@ const listPicks = () => http.get('/picks')
   .then(res => Promise.resolve(res.data));
 
 const listFollowingPicks = () => http.get('/picks/following')
-  .then(res => Promise.resolve(res.data));
+  .then(res => res.data);
 
-const getPick = () => http.get('/picks/:id')
+const getPick = (picks) => http.get('/picks/:id', picks)
   .then(res => Promise.resolve(res.data));
 
 export default {

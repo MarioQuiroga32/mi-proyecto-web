@@ -33,6 +33,8 @@ class Home extends Component {
         <PickSnippet/>
         <PickSnippet/>
         <PickSnippet/>
+        <PickSnippet/>
+        <PickSnippet/>
         </div>
         
         <div className="right-column">
