@@ -12,55 +12,81 @@ const threeDaysAgo = date.setDate(date.getDate() - 4);
 const fourDaysAgo = date.setDate(date.getDate() - 5);
 const fiveDaysAgo = date.setDate(date.getDate() - 6);
 
+const options = {
+  annotation: {
+       annotations: [{
+           drawTime: 'afterDatasetsDraw',
+           borderColor: 'red',
+           borderDash: [2, 2],
+           borderWidth: 2,
+           mode: 'vertical',
+           type: 'line',
+           value: 10,
+           scaleID: 'x-axis-0',
+     }]
+  },
+  maintainAspectRation: false
+};
+
 
 class StockSnippets extends Component {
-  
-  render() {
-    const options = {
-      annotation: {
-           annotations: [{
-               drawTime: 'afterDatasetsDraw',
-               borderColor: 'red',
-               borderDash: [2, 2],
-               borderWidth: 2,
-               mode: 'vertical',
-               type: 'line',
-               value: 10,
-               scaleID: 'x-axis-0',
-         }]
-      },
-      maintainAspectRation: false
-    }
 
-      const data = {
-        labels: [fiveDaysAgo, fourDaysAgo, threeDaysAgo, twoDaysAgo, oneDayAgo, yesterday],
-        datasets: [{
-          label: 'Stock name will go here',
-          data: [12, 19, 3, 5, 2, 3], 
-          backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
+  state = {
+    stocks: []
+  }
+
+  interval = undefined
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState({ stocks: '' })
+    }, 1000)
+  }
+
+  getDateTime = timestamp => {
+    const hours = new Date(timestamp).getHours()
+    const minutes = new Date(timestamp).getMinutes()
+    const seconds = new Date(timestamp).getSeconds()
+    return `${hours}:${minutes}:${seconds}`
+  }
+
+  getRandomData = () => ~~(Math.random() * 100)
+
+
+  getFullData = () => new Array(6).fill(null).map(_ => this.getRandomData())
+
+  setDynamicDataChart = () => {
+    return {
+      labels: [this.getDateTime(fiveDaysAgo), this.getDateTime(fourDaysAgo), this.getDateTime(threeDaysAgo), this.getDateTime(twoDaysAgo), this.getDateTime(twoDaysAgo), this.getDateTime(oneDayAgo)],
+      datasets: [{
+        label: 'Stock name will go here',
+        data: this.getFullData(),
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
       }]
-      }
-  
+    }
+  }
+
+  render() {
     return (
       <div className="stock-snippet">
       <Line
-      data = {data}
+      data = {this.setDynamicDataChart()}
       style={{marginTop: '5%' }}
       width={100}
       height={30}

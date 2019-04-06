@@ -302,7 +302,9 @@ ul.twPc-Arrange {
   height: 1000px;
   width: 680px;
   order: 2;
-  margin-left: 70px
+  margin-left: 70px;
+  overflow: auto;    
+  scrollbar-base-color:#ffeaff
  
   
 }
@@ -404,6 +406,8 @@ ul.twPc-Arrange {
 .btn-follow {
   display: inline;
 }
+
+
 
 
 

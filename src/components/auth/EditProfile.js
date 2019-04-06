@@ -77,6 +77,8 @@ class EditProfile extends Component {
         )
   }
 
+  isValidPortfolio = (touch, errors) => touch.portfolio && errors.portfolio ? 'is-invalid' : ''
+
   render() {
     const { errors, user, touch } =  this.state;
 
@@ -102,7 +104,13 @@ class EditProfile extends Component {
               </div>
               <div className="form-group">
                 <label>Portfolio</label>
-                <input type="text" name="portfolio" className={`form-control ${touch.portfolio && errors.portfolio ? 'is-invalid' : ''}`} value={user.portfolio} onChange={this.handleChange} onBlur={this.handleBlur} value={user.portfolio}/>
+                <input 
+                  type="text" 
+                  name="portfolio" 
+                  value={user.portfolio}
+                  className={`form-control ${this.isValidPortfolio(touch, errors)}`} 
+                  onChange={this.handleChange} 
+                  onBlur={this.handleBlur} /> 
               </div>
             </form>
           </div>

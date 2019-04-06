@@ -6,37 +6,63 @@ import RecommendedSnippet from "./snippets/RecommendedSnippet";
 import ColdStocksSnippet from "./snippets/ColdStocksSnippet";
 import StockSnippet from "./snippets/StockSnippet";
 
+// import { getStock } from 'your-service'
 
-export default () => {
-  return (
-    <div className="home">
-        
-    <Navbar />
-   
+class Market extends Component {
 
-   <div className="columns">
-   
-   <div className="left-column">
-    <ProfileSnippet/>
-    <HotStocksSnippet/>
-    </div>
+  state = {
+    stocks: []
+  }
 
-    <div className="center-column">
-    <StockSnippet/>
-    <StockSnippet/>
-    <StockSnippet/>
-    <StockSnippet/>
-    <StockSnippet/>
-    <StockSnippet/>
-    </div>
-    
-    <div className="right-column">
-    <RecommendedSnippet/>
-    <ColdStocksSnippet/>
-    </div>
-   </div>
-    
-    
-  </div>
-  );
+  interval = undefined
+
+  // componentDidMount() {
+  //   this.getStocks()
+  // }
+
+  // getStocks = () => {
+  //   this.interval = setInterval(() => {
+  //     getStock()
+  //       .then(allStocks => this.setState({ stocks: allStocks }))
+  //   }, 1000)
+  // };
+
+  listStocks = () => this.state.stocks.map((stock, index) => <StockSnippet key={index} {...stock} />)
+
+  // componentWillUnmount() {
+  //   clearInterval(this.interval)
+  // }
+
+  render() {
+    const { stocks } = this.state
+    return (
+      <div className="home">
+        <Navbar />
+
+        <div className="columns">
+          <div className="left-column">
+            <ProfileSnippet />
+            <HotStocksSnippet />
+          </div>
+
+          <div className="center-column">
+            { this.listStocks() }
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+          </div>
+
+          <div className="right-column">
+            <RecommendedSnippet />
+            <ColdStocksSnippet />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
+export default Market;
