@@ -53,6 +53,13 @@ class Market extends Component {
             <StockSnippet />
             <StockSnippet />
             <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
+            <StockSnippet />
           </div>
 
           <div className="right-column">

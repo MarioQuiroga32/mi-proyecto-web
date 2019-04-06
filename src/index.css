@@ -8,6 +8,7 @@ html, body {
   /*background: linear-gradient(to bottom, #ffffff 0%, #2dbdbd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background-color: #2dbdbd;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff', endColorstr='#fffff',GradientType=0 ); /* IE6-9 */
+  position: fixed;
 }
 
 .navbar {
@@ -303,10 +304,8 @@ ul.twPc-Arrange {
   width: 680px;
   order: 2;
   margin-left: 70px;
-  overflow: auto;    
-  scrollbar-base-color:#ffeaff
- 
-  
+  overflow: scroll;    
+  scrollbar-base-color:#ffeaff;
 }
 
 

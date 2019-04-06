@@ -19,9 +19,9 @@ class ProperListRender extends Component {
 
   setUsers = usersList => this.setState({ usersList });
 
-  // onClickFollow() {
-  //   usersService.listUsers().findByIdAndUpdate(sessionStorage.id)
-  // }
+  onClickFollow(id) {
+    usersService.follow(id)
+  }
 
   render() {
 
@@ -30,7 +30,7 @@ class ProperListRender extends Component {
         {this.state.usersList.map((recommendedUser, index) => (
           <div key={index} className="recommended-card">
             <h6>{recommendedUser.email}</h6>
-            <button className="btn-follow">
+            <button className="btn-follow" onClick={this.onClickFollow.bind(this, recommendedUser.id)}>
               Follow
             </button>
           </div>
