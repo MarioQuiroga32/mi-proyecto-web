@@ -27,7 +27,7 @@ class ProperListRender extends Component {
   render() {
 
     return (
-      <ul>
+      <ul className="recommended-list">
         {this.state.usersList.map((recommendedUser, index) => (
           <div key={index} className="recommended-card">
             <h6>{recommendedUser.email}</h6>

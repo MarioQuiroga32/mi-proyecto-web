@@ -119,7 +119,7 @@ class Login extends Component {
                </div>
                <button className="btn btn-login" form="login-form" type="submit" disabled={!this.isValid()}> Login</button>
              </form>
-             <p className="mt-4"><small>If you don't have an account yet, you can create it account <Link to="/register">here</Link></small></p>
+             <p className="mt-4"><small>Don´t have an account? Create it <Link to="/register">here</Link></small></p>
              </div>
 
           </div>

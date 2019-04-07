@@ -9,7 +9,40 @@ class HotStocksSnippet extends Component {
     return (
       <div className="hotstocks">
       Hot Stocks
-      <div></div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+
+      
+      
+      
       </div>
    );
   }

@@ -5,18 +5,39 @@ import pickService from '../../services/PickService'
 
 
 class PickSnippet extends Component {
+
+  state = {
+    pick: {
+      user: "",
+      action: "",
+      description: "",
+      likes: [],
+      comments: [],
+      createdAt: "",
+      updatedAt: "",
+      id: ""
+    },
+    picksList : []
+  }
   
- getFollowingPicks () {
-   pickService.listFollowingPicks().then(res => console.log(res.data));
+ componentDidMount () {
+   pickService.listFollowingPicks().then(picksList => this.setPicks(picksList)).then(console.log(this.state.picksList));
+
  }
 
- componentDidMount () {
-     this.getFollowingPicks()
- }
+ setPicks = picksList => this.setState({ picksList });
+
 
   render() {
     return (
-      <div className="pick-snippet">Picks from people you follow go here</div>
+      <div className="pick-snippet">
+      <div className="pick-snippet-pic"></div>
+      <div className="pick-snippet-username"><a>UsernameHere</a></div>
+      <div className="pick-snippet-text">Pick description here</div>
+      <div className="pick-snippet-stock">Stock</div>
+      <div className="pick-snippet-date">Date</div>
+      <div className="pick-snippet-action">Action</div>
+      </div>
    );
   }
 }

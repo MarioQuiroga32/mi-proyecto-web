@@ -23,12 +23,11 @@ class ProfileSnippet extends Component {
           <div>
            
             <a
-              title="Mert S. Kaplan"
               href="/editprofile"
               className="twPc-avatarLink" >
               <img
-                alt="Mert S. Kaplan"
-                src="download.png"
+                alt=""
+                src="../../public/download.png"
                 className="twPc-avatarImg"
               />
             </a>

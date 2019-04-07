@@ -7,8 +7,42 @@ class ColdStocksSnippet extends Component {
   
   render() {
     return (
-      <div className="coldstocks">
-      <h6>Cold Stocks</h6>
+      <div className="hotstocks">
+      Hot Stocks
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+      <div className="hotstock">
+      <div className="stock">Stock</div>
+      <div className="stock">Action</div>
+      <div className="stock">Follow</div>
+      <div className="stock">See graph</div>
+      </div>
+
+      
+      
+      
       </div>
    );
   }
