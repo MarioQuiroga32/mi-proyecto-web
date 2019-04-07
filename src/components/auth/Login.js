@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import authService from '../../services/AuthService'
 import { withAuthConsumer } from '../../contexts/AuthStore';
+import Register from './Register'
 
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -96,41 +97,36 @@ class Login extends Component {
     }
 
     return (
-      <div className="box mx-auto">
-        <div className="row">
-          
-          <div className="col">
-            <h5>Hello!!</h5>
-            <p className="lead mb-5">Login</p>
-            <p className="mb-2"><small>If you signup, you agree with all our terms and conditions where we can do whatever we want with the data!</small></p>
-            
+    
+      <div className="login">
+      <div className="left-login"></div>
+      <div className="right-login">
+
+      <Register/>
+      
+            <div className="login-form">
+      <h4>Log in</h4>
+             <form id="login-form" className="mt-4" onSubmit={this.handleSubmit}>
+               <div className="form-group">
+                 <label>Email</label>
+                 <input type="email" name="email" className={`form-control ${touch.email && errors.email ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.email} />
+                 <div className="invalid-feedback">{ errors.email }</div>
+               </div>
+               <div className="form-group">
+                 <label>Password</label>
+                 <input type="password" name="password" className={`form-control ${touch.password && errors.password ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.password} />
+                 <div className="invalid-feedback">{ errors.password }</div>
+               </div>
+               <button className="btn btn-login" form="login-form" type="submit" disabled={!this.isValid()}> Login</button>
+             </form>
+             <p className="mt-4"><small>If you don't have an account yet, you can create it account <Link to="/register">here</Link></small></p>
+             </div>
+
           </div>
-
-          <div className="col">
-            <h3>Log in</h3>
-            <form id="login-form" className="mt-4" onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <label>Email</label>
-                <input type="email" name="email" className={`form-control ${touch.email && errors.email ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.email} />
-                <div className="invalid-feedback">{ errors.email }</div>
-              </div>
-              <div className="form-group">
-                <label>Password</label>
-                <input type="password" name="password" className={`form-control ${touch.password && errors.password ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.password} />
-                <div className="invalid-feedback">{ errors.password }</div>
-              </div>
-              <button className="btn btn-white" form="login-form" type="submit" disabled={!this.isValid()}> Login</button>
-            </form>
-            <p className="mt-4"><small>If you don't have an account yet, you can create your account <Link to="/register">here</Link></small></p>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
+        
+           </div>
+           
+           
     );
   }
 }

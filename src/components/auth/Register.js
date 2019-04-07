@@ -36,21 +36,8 @@ const validations = {
       message = 'Password is required';
     }
     return message;
-  },
-  course: (value) => {
-    let message;
-    if (!value) {
-      message = 'Course is required';
-    }
-    return message;
-  },
-  campus: (value) => {
-    let message;
-    if (!value) {
-      message = 'Campus is required';
-    }
-    return message;
   }
+  
 }
 
 export default class Register extends Component {
@@ -122,10 +109,8 @@ export default class Register extends Component {
     }
 
     return (
-      <div className="box mx-auto">
-        <div className="row">
-          <div className="col-6">
-            <h3>Sign up</h3>
+      <div className="register-form">
+        <h4>Sign up</h4>
             <form id="register-form" className="mt-4" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label>Email</label>
@@ -142,21 +127,11 @@ export default class Register extends Component {
                 <input type="text" name="username" className={`form-control ${touch.username && errors.username ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.username} />
                 <div className="invalid-feedback">{ errors.username }</div>
               </div>
-              <div className="form-group">
-                <label>Name</label>
-                <input type="text" name="name" className={`form-control ${touch.name && errors.name ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.name} />
-                <div className="invalid-feedback">{ errors.name }</div>
-              </div>
+              {/* <p className="mb-2"><small>If you signup, you agree with all our terms and conditions where we can do whatever we want with the data!</small></p> */}
+            <button className="btn btn-white" form="register-form" type="submit" disabled={!this.isValid()}> Create the Account</button>
             </form>
           </div>
-          <div className="col-6 pt-4">
-            <h5>Register</h5>
-            <p className="lead mb-5">Register</p>
-            <p className="mb-2"><small>If you signup, you agree with all our terms and conditions where we can do whatever we want with the data!</small></p>
-            <button className="btn btn-white" form="register-form" type="submit" disabled={!this.isValid()}> Create the Account</button>
-          </div>
-        </div>
-      </div>
+      
     );
   }
 }

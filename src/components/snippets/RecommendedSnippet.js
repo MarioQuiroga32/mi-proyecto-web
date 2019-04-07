@@ -3,6 +3,7 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import usersService from "../../services/UsersService";
 import { Link } from "react-router-dom";
+import Carousel from 'react-bootstrap';
 
 class ProperListRender extends Component {
   state = {
