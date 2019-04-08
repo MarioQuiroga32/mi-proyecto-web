@@ -319,7 +319,7 @@ ul.twPc-Arrange {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .left-column {
@@ -327,15 +327,27 @@ ul.twPc-Arrange {
   width: 340px;
   order: 1;
   align-items: left;
+  
 }
 
 .center-column {
   height: 1000px;
   width: 680px;
   order: 2;
-  margin-left: 70px;
+  margin-left: 40px;
+  margin-right: 10px;
   overflow: scroll;
   scrollbar-base-color: #e4e3db;
+
+}
+
+.center-column-container {
+  height: 2000px;
+  width: 680px;
+  order: 2;
+  /* overflow: scroll; */
+  scrollbar-base-color: #e4e3db;
+
 }
 
 .right-column {

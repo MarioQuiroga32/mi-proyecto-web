@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import pickService from "../../services/PickService";
 import Select from "react-select";
-import Calendar from "./DatePicker";
+import DatePicker from "./DatePicker";
 import List from "../../constants";
 
 const options = List;
@@ -17,14 +17,22 @@ export default class Modal extends Component {
     errors: {},
     touch: {},
     select: {
-      selectedOption: null
-    }
+      selectedOption: ""
+    },
+    startDate: new Date()
   };
 
   handleSelectChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+    this.setState({ stock: selectedOption.value });
+    console.log(`Option selected:`, selectedOption.value);
   };
+
+  handleDateChange(date) {
+    this.setState({
+      startDate: date
+    });
+    console.log(`Option selected:`, date);
+  }
 
   handleChange = event => {
     const { value, name } = event.target;
@@ -33,80 +41,153 @@ export default class Modal extends Component {
         ...this.state.pick,
         [name]: value
       }
-    })
-  }
+    });
+  };
 
   handleSubmit = event => {
     event.preventDefault();
-      pickService.createPick(this.state.pick);
-    }
-  
-
+    pickService.createPick(this.state.pick);
+  };
 
   render() {
     return (
-      <form className="modal-dialog" role="document" onSubmit={this.handleSubmit} >
+      <form
+        className="modal-dialog"
+        role="document"
+        onSubmit={this.handleSubmit}
+      >
         <div className="modal-content">
           <div className="modal-header">
+            <h5 className="modal-title" id="exampleModalLabel">
+              Pick
+            </h5>
 
-            <h5 className="modal-title" id="exampleModalLabel">Pick</h5> 
-
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
-            </button>  
-
+            </button>
           </div>
 
           <div className="modal-body">
-
-            <Select placeholder="Select a stock" onChange={this.handleSelectChange} options={options}/>
-
+            <Select
+              name="stock"
+              placeholder="Select a stock"
+              onChange={this.handleSelectChange}
+              options={options}
+              value={this.state.select.selectedOption.value}
+            />
             <p />
-
-            Closing day of your prediction: <Calendar />
-
+            Closing day of your prediction:{" "}
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleDateChange}
+            />
             <p />
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio1" value="Down 0-5%" onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio1">Down 0-5%</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio1"
+                value="Down 0-5%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio1">
+                Down 0-5%
+              </label>
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio2" value="Down 5-10%" onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio2">Down 5-10%</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio2"
+                value="Down 5-10%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio2">
+                Down 5-10%
+              </label>
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio3" value={this.state.pick.action} onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio3">Down +10%</label> 
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio3"
+                value="Down +10%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio3">
+                Down +10%
+              </label>
               <br />
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio4" value={this.state.pick.action} onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio3">Up 0-5%</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio4"
+                value="Up 0-5%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio3">
+                Up 0-5%
+              </label>
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio5" value={this.state.pick.action} onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio4">Up 5-10%</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio5"
+                value="Up 5-10%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio4">
+                Up 5-10%
+              </label>
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="action" id="inlineRadio6" value={this.state.pick.action} onChange={this.handleChange}/>
-              <label class="form-check-label" htmlFor="inlineRadio3">Up +10%</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="action"
+                id="inlineRadio6"
+                value="Up +10%"
+                onChange={this.handleChange}
+              />
+              <label class="form-check-label" htmlFor="inlineRadio3">
+                Up +10%
+              </label>
             </div>
-
             <p />
-            <textarea placeholder="Your prediction here..." type="textbox" className="textbox" name="description" onChange={this.handleChange}/>
+            <textarea
+              placeholder="Your prediction here..."
+              type="textbox"
+              className="textbox"
+              name="description"
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" className="btn btn-primary">Post</button>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" className="btn btn-primary">
+              Post
+            </button>
           </div>
-
         </div>
       </form>
     );

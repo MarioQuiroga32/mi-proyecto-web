@@ -27,13 +27,7 @@ class Home extends Component {
         <HotStocksSnippet/>
         </div>
 
-        <div className="center-column">
-        <PickSnippet/>
-        <PickSnippet/>
-        <PickSnippet/>
-        <PickSnippet/>
-        <PickSnippet/>
-        <PickSnippet/>
+        <div className="center-column-container">
         <PickSnippet/>
         </div>
         

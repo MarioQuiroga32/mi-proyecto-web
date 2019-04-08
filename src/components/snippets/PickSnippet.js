@@ -3,41 +3,56 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import pickService from '../../services/PickService'
 
-
-class PickSnippet extends Component {
-
+class ProperPickRender extends Component {
+  
   state = {
     pick: {
       user: "",
       action: "",
-      description: "",
-      likes: [],
-      comments: [],
-      createdAt: "",
-      updatedAt: "",
-      id: ""
+      description: ""
     },
     picksList : []
   }
   
- componentDidMount () {
-   pickService.listFollowingPicks().then(picksList => this.setPicks(picksList)).then(console.log(this.state.picksList));
+  componentDidMount () {
+    pickService.listFollowingPicks().then(picksList => this.setPicks(picksList));
+  }
+ 
+  setPicks = picksList => this.setState({ picksList });
+  
 
- }
+  render() {
 
- setPicks = picksList => this.setState({ picksList });
+    return (
+      <div>
+        {this.state.picksList.map((pick, index) => (
+          <div key={index} className="pick-snippet">
+            <div className="pick-snippet-pic"></div>
+      <div className="pick-snippet-username"><a>{pick.user}</a></div>
+      <div className="pick-snippet-text">{pick.description}</div>
+      <div className="pick-snippet-stock">{pick.stock}</div>
+      <div className="pick-snippet-date">{pick.date}</div>
+      <div className="pick-snippet-action">{pick.action}</div>
+          </div>
+        ))}
+        </div>
+     
+    );
+  }
+}
+
+
+class PickSnippet extends Component {
+
 
 
   render() {
     return (
-      <div className="pick-snippet">
-      <div className="pick-snippet-pic"></div>
-      <div className="pick-snippet-username"><a>UsernameHere</a></div>
-      <div className="pick-snippet-text">Pick description here</div>
-      <div className="pick-snippet-stock">Stock</div>
-      <div className="pick-snippet-date">Date</div>
-      <div className="pick-snippet-action">Action</div>
+      <div className="center-column">
+      
+      <ProperPickRender picksList />
       </div>
+   
    );
   }
 }
