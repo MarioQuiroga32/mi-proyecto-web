@@ -33,7 +33,7 @@ class NavBar extends Component {
         {showModal && <Modal />}
         <nav className="navbar navbar-expand-lg">
           
-          <Link className="navbar-brand" to="/home">MiProyecto</Link>
+          <Link className="navbar-brand" to="/home">Pickster</Link>
           
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />

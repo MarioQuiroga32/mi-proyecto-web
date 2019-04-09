@@ -8,7 +8,7 @@ class ColdStocksSnippet extends Component {
   render() {
     return (
       <div className="hotstocks">
-      Hot Stocks
+      <div className="hotstocks-title">Cold Stocks</div>
       <div className="hotstock">
       <div className="stock">Stock</div>
       <div className="stock">Action</div>

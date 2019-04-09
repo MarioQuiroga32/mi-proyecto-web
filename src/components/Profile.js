@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./misc/NavBar";
 import RecommendedSnippet from "./snippets/RecommendedSnippet";
-import PickSnippet from "./snippets/PickSnippet";
+import ProfilePickSnippet from "./snippets/ProfilePickSnippet";
 
 
 class Profile extends Component {
@@ -31,9 +31,7 @@ class Profile extends Component {
       <div className="profile-left"></div>
      
       <div className="profile-center">
-      <PickSnippet/>
-      <PickSnippet/>
-      <PickSnippet/>
+      <ProfilePickSnippet/>
       </div>
       
       <div className="profile-right">

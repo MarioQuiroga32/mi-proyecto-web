@@ -61,8 +61,8 @@ class StockSnippets extends Component {
       datasets: [{
         label: 'Stock name will go here',
         data: this.getFullData(),
-        backgroundColor: 'rgba(197, 0, 26, 0.5)',
-        borderColor: 'rgba(197, 0, 26, 1)',
+        backgroundColor: /*'rgba(197, 0, 26, 0.5)'*/ 'rgba(56,161,242, 0.5)',
+        borderColor: /*'rgba(197, 0, 26, 1)'*/ 'rgba(56,161,242, 0.5)',
         borderWidth: 1
       }]
     }

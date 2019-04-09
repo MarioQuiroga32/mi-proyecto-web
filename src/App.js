@@ -9,7 +9,6 @@ import PrivateRoute from './guards/PrivateRoute';
 import Market from './components/Market';
 import Rank from './components/Rank';
 import Profile from './components/Profile';
-import Modal from './components/misc/Modal'
 
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
      return (
       <div className="container-fluid">
         <div className="row mt-5">
-          <div className="col-12">
+          <div className="">
             <Switch>
               <Route exact path="/" component={Login} />
               <Route exact path="/register" component={Register} />

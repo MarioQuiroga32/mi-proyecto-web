@@ -27,7 +27,7 @@ class ProfileSnippet extends Component {
               className="twPc-avatarLink" >
               <img
                 alt=""
-                src="../../public/download.png"
+                src="default-profile.png"
                 className="twPc-avatarImg"
               />
             </a>
@@ -54,7 +54,7 @@ class ProfileSnippet extends Component {
                 <li className="twPc-ArrangeSizeFit">
                   <a href="" title="885 Following">
                     <span className="twPc-StatLabel twPc-block">Following</span>
-                    <span className="twPc-StatValue">885</span>
+                    <span className="twPc-StatValue">{user.following.length}</span>
                   </a>
                 </li>
                 <li className="twPc-ArrangeSizeFit">

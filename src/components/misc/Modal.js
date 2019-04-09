@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import pickService from "../../services/PickService";
 import Select from "react-select";
-import DatePicker from "./DatePicker";
+// import DatePicker from "./DatePicker";
 import List from "../../constants";
+import DatePicker from "react-datepicker";
 
 const options = List;
 
@@ -19,19 +20,28 @@ export default class Modal extends Component {
     select: {
       selectedOption: ""
     },
-    startDate: new Date()
+    startDate: new Date(),
+    showModal: false
   };
+
+  toggleModalVisibility = () =>
+  this.setState({ showModal: !this.state.showModal }, () =>
+    console.info(this.state)
+  );
 
   handleSelectChange = selectedOption => {
-    this.setState({ stock: selectedOption.value });
-    console.log(`Option selected:`, selectedOption.value);
+    const newPick = {...this.state.pick, stock: selectedOption.value}
+    this.setState({ pick: newPick }, () => console.info('PICK IS DIFFERENT => ', this.state.pick))
   };
 
-  handleDateChange(date) {
-    this.setState({
-      startDate: date
-    });
-    console.log(`Option selected:`, date);
+  formatDate = (date = Date()) => {
+    const pickedDate = new Date(date)
+    return `${pickedDate.getMonth() + 1}-${pickedDate.getDate()}-${pickedDate.getFullYear()}`
+  }
+
+  handleDateChange = datetime => {
+    const newPick = {...this.state.pick, date: this.formatDate(datetime)}
+    this.setState({ pick: newPick, startDate: datetime })
   }
 
   handleChange = event => {
@@ -51,6 +61,8 @@ export default class Modal extends Component {
 
   render() {
     return (
+      <div>
+        {this.showModal}
       <form
         className="modal-dialog"
         role="document"
@@ -82,88 +94,85 @@ export default class Modal extends Component {
             />
             <p />
             Closing day of your prediction:{" "}
-            <DatePicker
-              selected={this.state.startDate}
-              onChange={this.handleDateChange}
-            />
+            <DatePicker selected={this.state.startDate} onChange={this.handleDateChange} />
             <p />
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio1"
-                value="Down 0-5%"
+                value="Down 0-2%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio1">
-                Down 0-5%
+              <label className="form-check-label" htmlFor="inlineRadio1">
+                Down 0-2%
               </label>
             </div>
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio2"
-                value="Down 5-10%"
+                value="Down 2-5%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio2">
-                Down 5-10%
+              <label className="form-check-label" htmlFor="inlineRadio2">
+                Down 2-5%
               </label>
             </div>
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio3"
-                value="Down +10%"
+                value="Down +5%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio3">
-                Down +10%
+              <label className="form-check-label" htmlFor="inlineRadio3">
+                Down +5%
               </label>
               <br />
             </div>
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio4"
-                value="Up 0-5%"
+                value="Up 0-2%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio3">
-                Up 0-5%
+              <label className="form-check-label" htmlFor="inlineRadio3">
+                Up 0-2%
               </label>
             </div>
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio5"
-                value="Up 5-10%"
+                value="Up 2-5%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio4">
-                Up 5-10%
+              <label className="form-check-label" htmlFor="inlineRadio4">
+                Up 2-5%
               </label>
             </div>
-            <div class="form-check form-check-inline">
+            <div className="form-check form-check-inline">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="action"
                 id="inlineRadio6"
-                value="Up +10%"
+                value="Up +5%"
                 onChange={this.handleChange}
               />
-              <label class="form-check-label" htmlFor="inlineRadio3">
-                Up +10%
+              <label className="form-check-label" htmlFor="inlineRadio3">
+                Up +5%
               </label>
             </div>
             <p />
@@ -181,6 +190,7 @@ export default class Modal extends Component {
               type="button"
               className="btn btn-secondary"
               data-dismiss="modal"
+              onClick={this.toggleModalVisibility}
             >
               Close
             </button>
@@ -190,6 +200,7 @@ export default class Modal extends Component {
           </div>
         </div>
       </form>
+      </div>
     );
   }
 }

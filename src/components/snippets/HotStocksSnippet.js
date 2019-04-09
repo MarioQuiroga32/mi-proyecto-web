@@ -3,12 +3,15 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 
 
+
+
+
 class HotStocksSnippet extends Component {
   
   render() {
     return (
       <div className="hotstocks">
-      Hot Stocks
+      <div className="hotstocks-title">Hot Stocks</div>
       <div className="hotstock">
       <div className="stock">Stock</div>
       <div className="stock">Action</div>

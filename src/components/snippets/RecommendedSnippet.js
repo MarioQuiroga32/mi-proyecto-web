@@ -30,7 +30,7 @@ class ProperListRender extends Component {
       <ul className="recommended-list">
         {this.state.usersList.map((recommendedUser, index) => (
           <div key={index} className="recommended-card">
-            <h6>{recommendedUser.email}</h6>
+            <a href="/profile"><h6>{recommendedUser.email}</h6></a>
             <button className="btn-follow" onClick={this.onClickFollow.bind(this, recommendedUser.id)}>
               Follow
             </button>

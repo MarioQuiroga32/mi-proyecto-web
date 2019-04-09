@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import pickService from "../../services/PickService";
-import userService from "../../services/UsersService";
 
 class ProperPickRender extends Component {
   state = {
@@ -12,27 +11,24 @@ class ProperPickRender extends Component {
       action: "",
       description: ""
     },
-    picksList: [],
-    usersList: []
+    userPicksList: []
   };
 
 
 
   componentDidMount() {
     pickService
-      .listFollowingPicks()
-      .then(picksList => this.setPicks(picksList));
-
-      userService.listUsers().then(usersList => this.setUsers(usersList))
+      .listUserPicks()
+      .then(userPicksList => this.setPicks(userPicksList));
+      
   }
 
-  setPicks = picksList => this.setState({ picksList });
-  setUsers = usersList => this.setState({ usersList });
+  setPicks = userPicksList => this.setState({ userPicksList });
 
   render() {
     return (
       <div>
-        {this.state.picksList.map(
+        {this.state.userPicksList.map(
           (pick, index) =>(
               <div key={index} className="pick-snippet">
                 <div className="pick-snippet-pic">
@@ -61,7 +57,7 @@ class PickSnippet extends Component {
   render() {
     return (
       <div className="center-column">
-        <ProperPickRender picksList />
+        <ProperPickRender userPicksList />
       </div>
     );
   }
