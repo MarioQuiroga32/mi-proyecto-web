@@ -47,19 +47,19 @@ class Market extends Component {
 
           <div className="center-column">
             { this.listStocks() }
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
-            <StockSnippet />
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="aapl"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
+            <StockSnippet stock="axp"/>
           </div>
 
           <div className="right-column">

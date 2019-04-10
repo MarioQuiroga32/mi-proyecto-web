@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import pickService from "../../services/PickService";
 import Select from "react-select";
-// import DatePicker from "./DatePicker";
 import List from "../../constants";
 import DatePicker from "react-datepicker";
 
@@ -24,10 +23,7 @@ export default class Modal extends Component {
     showModal: false
   };
 
-  toggleModalVisibility = () =>
-  this.setState({ showModal: !this.state.showModal }, () =>
-    console.info(this.state)
-  );
+  toggleModalVisibility = () => this.setState({ showModal: !this.state.showModal });
 
   handleSelectChange = selectedOption => {
     const newPick = {...this.state.pick, stock: selectedOption.value}

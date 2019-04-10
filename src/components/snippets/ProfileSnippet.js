@@ -14,7 +14,6 @@ class ProfileSnippet extends Component {
 
   render() {
     const { user } = this.props;
-
     return (
       <div className="profile-snippet">
         <div className="twPc-div">
@@ -34,10 +33,9 @@ class ProfileSnippet extends Component {
 
             <div className="twPc-divUser">
               <div className="twPc-divName">
-                <a href="https://twitter.com/mertskaplan" />
               </div>
               <span>
-                <a className="profile-username" href="/profile">
+                <a className="profile-username" href="profile/:{user.id}">
                   @{user.email}<span />
                 </a>
               </span>
@@ -52,13 +50,13 @@ class ProfileSnippet extends Component {
                   </a>
                 </li>
                 <li className="twPc-ArrangeSizeFit">
-                  <a href="" title="885 Following">
+                  <a href="/profile" title="885 Following">
                     <span className="twPc-StatLabel twPc-block">Following</span>
                     <span className="twPc-StatValue">{user.following.length}</span>
                   </a>
                 </li>
                 <li className="twPc-ArrangeSizeFit">
-                  <a href="" title="1.810 Followers">
+                  <a href="/profile" title="1.810 Followers">
                     <span className="twPc-StatLabel twPc-block">Followers</span>
                     <span className="twPc-StatValue">1.810</span>
                   </a>
@@ -68,9 +66,6 @@ class ProfileSnippet extends Component {
           </div>
         </div>
 
-        <div className="hot-stocks">
-          <a href="" />
-        </div>
       </div>
     );
   }

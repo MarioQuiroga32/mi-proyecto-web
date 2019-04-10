@@ -10,7 +10,6 @@ class Profile extends Component {
   };
 
   render() {
-    const { user } = this.props;
     return (
       <div className="profile">
       <Navbar />

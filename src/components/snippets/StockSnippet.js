@@ -3,14 +3,10 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-annotation';
+import StockService from "../../services/StockService";
 
 const date = new Date();
-const yesterday = date.setDate(date.getDate() - 1);
-const oneDayAgo = date.setDate(date.getDate() - 2);
-const twoDaysAgo = date.setDate(date.getDate() - 3);
-const threeDaysAgo = date.setDate(date.getDate() - 4);
-const fourDaysAgo = date.setDate(date.getDate() - 5);
-const fiveDaysAgo = date.setDate(date.getDate() - 6);
+
 
 const options = {
   annotation: {
@@ -32,15 +28,25 @@ const options = {
 class StockSnippets extends Component {
 
   state = {
-    stocks: []
+    stocks: [],
+    labels: []
   }
 
   interval = undefined
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState({ stocks: '' })
-    }, 1000)
+    this.fetchStocks()
+  }
+
+  fetchStocks() {
+    StockService.listStocks()
+      .then(data => {
+        this.setState({ stocks: data['axp'].map(x => x.close).slice(-6) })
+        this.setState({ labels: data['axp'].map(x => this.getDateTime(x.createdAt)).slice(-6) })
+        
+        // this.setState({ stocks: data[this.props.stock].map(x => x.close).slice(-6) })
+        // this.setState({ labels: data[this.props.stock].map(x => this.getDateTime(x.createdAt)).slice(-6) })
+      })
   }
 
   getDateTime = timestamp => {
@@ -53,14 +59,17 @@ class StockSnippets extends Component {
   getRandomData = () => ~~(Math.random() * 100)
 
 
-  getFullData = () => new Array(6).fill(null).map(_ => this.getRandomData())
+  getFullData = () => [
+    { x: new Date(), y: 1 },
+    { x: 2, y: 3 }
+  ]
 
   setDynamicDataChart = () => {
     return {
-      labels: [this.getDateTime(fiveDaysAgo), this.getDateTime(fourDaysAgo), this.getDateTime(threeDaysAgo), this.getDateTime(twoDaysAgo), this.getDateTime(twoDaysAgo), this.getDateTime(oneDayAgo)],
+      labels: this.state.labels,
       datasets: [{
         label: 'Stock name will go here',
-        data: this.getFullData(),
+        data: this.state.stocks,
         backgroundColor: /*'rgba(197, 0, 26, 0.5)'*/ 'rgba(56,161,242, 0.5)',
         borderColor: /*'rgba(197, 0, 26, 1)'*/ 'rgba(56,161,242, 0.5)',
         borderWidth: 1
@@ -72,7 +81,7 @@ class StockSnippets extends Component {
     return (
       <div className="stock-snippet">
       <Line
-      data = {this.setDynamicDataChart()}
+      data={this.setDynamicDataChart()}
       width={100}
       height={31}
       options={options}

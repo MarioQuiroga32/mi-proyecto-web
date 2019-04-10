@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "./misc/NavBar";
 import ProfileSnippet from "./snippets/ProfileSnippet";
 import HotStocksSnippet from "./snippets/HotStocksSnippet";

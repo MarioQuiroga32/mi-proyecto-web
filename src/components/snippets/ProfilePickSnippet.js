@@ -20,7 +20,6 @@ class ProperPickRender extends Component {
     pickService
       .listUserPicks()
       .then(userPicksList => this.setPicks(userPicksList));
-      
   }
 
   setPicks = userPicksList => this.setState({ userPicksList });

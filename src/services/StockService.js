@@ -1,5 +1,10 @@
-const alpha = require('alphavantage')({ key: '05L7SRSYPYET3MRU' });
+import http from './BaseService';
 
-alpha.data.daily(`csco`).then(data => {
-  console.log(data);
-});
+
+const listStocks = () => http.get('/stocks')
+  .then(res => res.data);
+
+
+export default {
+  listStocks
+}

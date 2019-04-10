@@ -16,7 +16,7 @@ body {
 .navbar {
   margin-top: -48px;
   justify-content: stretch;
-  width: 1440px;
+  width: 102vw;
   margin-left: -15px;
   background-color: #1B2937;
   color: #c5beba ;
@@ -29,6 +29,10 @@ body {
 input {
   background-color: #c5beba !important;
   border-color: #c5beba;
+}
+
+.select-navbar {
+  width: 200px; 
 }
 
 .nav-link {
@@ -355,7 +359,8 @@ ul.twPc-Arrange {
 }
 
 .center-column {
-  height: 1000px;
+  height: 100vh;
+  padding-bottom: 78px;
   width: 680px;
   order: 2;
   margin-left: 10px;
@@ -367,7 +372,7 @@ ul.twPc-Arrange {
 }
 
 .center-column-container {
-  height: 2000px;
+  height: 100vh;
   width: 680px;
   order: 2;
   /* overflow: scroll; */
@@ -473,13 +478,13 @@ ul.twPc-Arrange {
 .login {
   display: flex;
   height: 100%;
-  width: 102%;
+  width: 100vw;
   margin-top: -49px;
 }
 
 .right-login {
   height: 800px;
-  width: 50%;
+  width: 50vw;
 }
 
 .left-login {
@@ -490,7 +495,7 @@ ul.twPc-Arrange {
 }
 
 .login-form {
-  width: 50%;
+  width: 40vw;
   margin-left: 30px;
   padding: 10px;
   background-color: #15202B;
@@ -506,7 +511,7 @@ ul.twPc-Arrange {
 
 .btn-login {
   background-color: #113743;
-  color: #15202B;
+  color: white;
 }
 
 .login h4 {
@@ -514,7 +519,7 @@ ul.twPc-Arrange {
 }
 
 .register-form {
-  width: 50%;
+  width: 40vw;
   margin-left: 30px;
   padding: 10px;
   background-color: #15202B;
@@ -534,7 +539,7 @@ ul.twPc-Arrange {
 
 .register-form button {
   background-color: #113743;
-  color: #15202B;
+  color: white;
 }
 
 .pick-snippet {
@@ -642,13 +647,18 @@ body {
 }
 
 .navbar {
-  width: 104vw
+  width: 104vw;
+  justify-content: space-between
 }
 
 .navbar-toggler {
-  background-color: white;
-  margin-left: 50%
-  
+  background-color: #10161D;
+  border-color: #38444D;
+  margin-left: 50%;
+}
+
+.navbar input {
+  margin: 10px
 }
 
 .container-fluid {
@@ -879,6 +889,7 @@ body {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    margin-left: 5px
   }
   
   .pick-snippet-username {
@@ -886,7 +897,7 @@ body {
     width: 200px;
     margin-left: 0px;
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 15px;
     color: #38A1F2
   }
   
@@ -961,4 +972,19 @@ body {
   i {
     color: #38A1F2
   }
+
+  .modal-dialog {
+    width: 70vw;
+    margin-right: 20vw
+  }
 }
+/* 
+.center-column-container {
+  height: 100vh;
+} */
+
+/* .center-column {
+  height: 100%;
+  padding-bottom: 78px;
+} */
+

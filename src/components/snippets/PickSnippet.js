@@ -43,7 +43,7 @@ class ProperPickRender extends Component {
                   />
                 </div>
                 <div className="pick-snippet-username">
-                  <a>@{pick.user}</a>
+                  <a>@{pick.username}</a>
                 </div>
                 <div className="pick-snippet-text">{pick.description}</div>
                 <div className="pick-snippet-stock">Stock: {pick.stock}</div>
