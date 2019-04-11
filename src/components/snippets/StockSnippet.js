@@ -27,11 +27,10 @@ const options = {
 
 class StockSnippets extends Component {
 
-  state = {
+ state = {
     stocks: [],
     labels: []
   }
-
   interval = undefined
 
   componentDidMount() {
@@ -41,11 +40,8 @@ class StockSnippets extends Component {
   fetchStocks() {
     StockService.listStocks()
       .then(data => {
-        this.setState({ stocks: data['axp'].map(x => x.close).slice(-6) })
-        this.setState({ labels: data['axp'].map(x => this.getDateTime(x.createdAt)).slice(-6) })
-        
-        // this.setState({ stocks: data[this.props.stock].map(x => x.close).slice(-6) })
-        // this.setState({ labels: data[this.props.stock].map(x => this.getDateTime(x.createdAt)).slice(-6) })
+        this.setState({ stocks: data[this.props.stock].map(x => x.close).slice(-6) })
+        this.setState({ labels: data[this.props.stock].map(x => this.getDateTime(x.createdAt)).slice(-6) })
       })
   }
 
@@ -56,19 +52,11 @@ class StockSnippets extends Component {
     return `${hours}:${minutes}:${seconds}`
   }
 
-  getRandomData = () => ~~(Math.random() * 100)
-
-
-  getFullData = () => [
-    { x: new Date(), y: 1 },
-    { x: 2, y: 3 }
-  ]
-
   setDynamicDataChart = () => {
     return {
       labels: this.state.labels,
       datasets: [{
-        label: 'Stock name will go here',
+        label: this.props.name,
         data: this.state.stocks,
         backgroundColor: /*'rgba(197, 0, 26, 0.5)'*/ 'rgba(56,161,242, 0.5)',
         borderColor: /*'rgba(197, 0, 26, 1)'*/ 'rgba(56,161,242, 0.5)',
@@ -80,6 +68,7 @@ class StockSnippets extends Component {
   render() {
     return (
       <div className="stock-snippet">
+
       <Line
       data={this.setDynamicDataChart()}
       width={100}

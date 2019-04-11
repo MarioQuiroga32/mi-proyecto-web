@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class ProfileSnippet extends Component {
   state = {
@@ -35,9 +36,7 @@ class ProfileSnippet extends Component {
               <div className="twPc-divName">
               </div>
               <span>
-                <a className="profile-username" href="profile/:{user.id}">
-                  @{user.email}<span />
-                </a>
+              <Link to={`/profile/${user.id}`}>@{user.email}<span /></Link>
               </span>
             </div>
 

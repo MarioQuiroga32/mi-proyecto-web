@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
-import stocksService from '../../services/StockService';
+import StockService from '../../services/StockService';
 
 
 
 
 class HotStocksSnippet extends Component {
+  
   state = {
     stock: {
       symbol: "",
@@ -17,10 +18,19 @@ class HotStocksSnippet extends Component {
   }
 
   componentDidMount() {
-    stocksService.listStocks().then(stocksList => this.setStocks(stocksList));
+    this.fetchStocks()
   }
 
-  setStocks = stocksList => this.setState({ stocksList });
+  fetchStocks() {
+    const stocks = ['axp', 'aapl', 'ba', 'cat', 'cvx', 'csco', 'ko', 'dwdp', 'dis', 'xom', 'gs', 'hd', 'ibm', 'intc', 'jnj', 'jpm', 'mcd', 'mrk', 'msft', 'nke', 'pfe', 'pg', 'trv', 'utx', 'unh', 'vz', 'v', 'wba', 'wmt'];
+
+    StockService.listStocks()
+      .then(data => {
+        for(let i = 0; i < stocks.length; i++) {
+        this.setState({ stocksList: data[stocks[i]].map(x =>  stocks[i] + ' ' + x.volume).slice(-1) })
+       } })
+  }
+
 
 
 
@@ -31,7 +41,7 @@ class HotStocksSnippet extends Component {
       <div className="hotstocks-title">Hot Stocks</div>
       <div className="hotstock">
       <div className="stock">Stock</div>
-      <div className="stock">Action</div>
+      <div className="stock">{this.state.stocksList}</div>
       <div className="stock">Follow</div>
       <div className="stock">See graph</div>
       </div>

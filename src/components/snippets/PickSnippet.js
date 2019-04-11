@@ -3,6 +3,7 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import pickService from "../../services/PickService";
 import userService from "../../services/UsersService";
+import { Link } from "react-router-dom";
 
 class ProperPickRender extends Component {
   state = {
@@ -43,7 +44,7 @@ class ProperPickRender extends Component {
                   />
                 </div>
                 <div className="pick-snippet-username">
-                  <a>@{pick.username}</a>
+                <Link to={`/profile/${pick.user}`}>@{pick.username}</Link>
                 </div>
                 <div className="pick-snippet-text">{pick.description}</div>
                 <div className="pick-snippet-stock">Stock: {pick.stock}</div>

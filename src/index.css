@@ -563,7 +563,7 @@ ul.twPc-Arrange {
 }
 
 .pick-snippet-text {
-  border: 0.5px solid #38444D;
+  /* border: 0.5px solid #38444D; */
   border-radius: 2px;
   width: 600px;
   height: 100px;

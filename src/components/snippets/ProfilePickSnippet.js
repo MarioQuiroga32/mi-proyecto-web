@@ -11,6 +11,10 @@ class ProperPickRender extends Component {
       action: "",
       description: ""
     },
+    user: {
+      id: "",
+      username: ""
+    },
     userPicksList: []
   };
 
@@ -18,7 +22,7 @@ class ProperPickRender extends Component {
 
   componentDidMount() {
     pickService
-      .listUserPicks()
+      .listUserPicks(this.props.name)
       .then(userPicksList => this.setPicks(userPicksList));
   }
 
@@ -38,7 +42,7 @@ class ProperPickRender extends Component {
                   />
                 </div>
                 <div className="pick-snippet-username">
-                  <a>@{pick.user}</a>
+                  <a>@{pick.username}</a>
                 </div>
                 <div className="pick-snippet-text">{pick.description}</div>
                 <div className="pick-snippet-stock">Stock: {pick.stock}</div>
@@ -56,7 +60,7 @@ class PickSnippet extends Component {
   render() {
     return (
       <div className="center-column">
-        <ProperPickRender userPicksList />
+        <ProperPickRender userPicksList name={this.props.match.params.id}/>
       </div>
     );
   }
