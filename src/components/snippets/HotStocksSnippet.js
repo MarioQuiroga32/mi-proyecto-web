@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
-import StockService from '../../services/StockService';
+import StockService from '../../services/StockService'
 
 
 
@@ -14,7 +14,12 @@ class HotStocksSnippet extends Component {
       close: "",
       volume: ""
     },
-    stocksList: []
+    stocksList: [],
+    apple: "",
+    microsoft: "",
+    disney: "",
+    cisco: "",
+    intel: ""
   }
 
   componentDidMount() {
@@ -22,52 +27,44 @@ class HotStocksSnippet extends Component {
   }
 
   fetchStocks() {
-    const stocks = ['axp', 'aapl', 'ba', 'cat', 'cvx', 'csco', 'ko', 'dwdp', 'dis', 'xom', 'gs', 'hd', 'ibm', 'intc', 'jnj', 'jpm', 'mcd', 'mrk', 'msft', 'nke', 'pfe', 'pg', 'trv', 'utx', 'unh', 'vz', 'v', 'wba', 'wmt'];
-
     StockService.listStocks()
       .then(data => {
-        for(let i = 0; i < stocks.length; i++) {
-        this.setState({ stocksList: data[stocks[i]].map(x =>  stocks[i] + ' ' + x.volume).slice(-1) })
-       } })
+        this.setState({ apple: data['aapl'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+        this.setState({ microsoft: data['msft'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+        this.setState({ disney: data['dis'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+        this.setState({ cisco: data['csco'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+        this.setState({ intel: data['intc'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+      })
   }
 
 
 
 
+
   render() {
-    console.log(this.state.stocksList)
+    console.log(this.state.apple)
     return (
       <div className="hotstocks">
       <div className="hotstocks-title">Hot Stocks</div>
       <div className="hotstock">
-      <div className="stock">Stock</div>
-      <div className="stock">{this.state.stocksList}</div>
-      <div className="stock">Follow</div>
-      <div className="stock">See graph</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apple</div>
+      <div className="stock hotstock-volume">{this.state.apple}</div>
       </div>
       <div className="hotstock">
-      <div className="stock">Stock</div>
-      <div className="stock">Action</div>
-      <div className="stock">Follow</div>
-      <div className="stock">See graph</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microsoft</div>
+      <div className="stock hotstock-volume">{this.state.microsoft}</div>
       </div>
       <div className="hotstock">
-      <div className="stock">Stock</div>
-      <div className="stock">Action</div>
-      <div className="stock">Follow</div>
-      <div className="stock">See graph</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disney</div>
+      <div className="stock hotstock-volume">{this.state.disney}</div>
       </div>
       <div className="hotstock">
-      <div className="stock">Stock</div>
-      <div className="stock">Action</div>
-      <div className="stock">Follow</div>
-      <div className="stock">See graph</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cisco</div>
+      <div className="stock hotstock-volume">{this.state.cisco}</div>
       </div>
       <div className="hotstock">
-      <div className="stock">Stock</div>
-      <div className="stock">Action</div>
-      <div className="stock">Follow</div>
-      <div className="stock">See graph</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intel</div>
+      <div className="stock hotstock-volume">{this.state.intel}</div>
       </div>
 
       

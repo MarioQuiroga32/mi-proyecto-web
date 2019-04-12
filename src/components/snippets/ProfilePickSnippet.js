@@ -37,12 +37,12 @@ class ProperPickRender extends Component {
                 <div className="pick-snippet-pic">
                   <img
                     alt=""
-                    src="default-profile.png"
+                    src={pick.avatarUrl}
                     className="pick-avatar"
                   />
                 </div>
                 <div className="pick-snippet-username">
-                  <a>@{pick.username}</a>
+                  <span>@{pick.username}</span>
                 </div>
                 <div className="pick-snippet-text">{pick.description}</div>
                 <div className="pick-snippet-stock">Stock: {pick.stock}</div>

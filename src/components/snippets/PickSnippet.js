@@ -7,14 +7,9 @@ import { Link } from "react-router-dom";
 
 class ProperPickRender extends Component {
   state = {
-    pick: {
-      user: "",
-      username: "",
-      action: "",
-      description: ""
-    },
     picksList: [],
-    usersList: []
+    usersList: [],
+
   };
 
 
@@ -24,22 +19,25 @@ class ProperPickRender extends Component {
       .listFollowingPicks()
       .then(picksList => this.setPicks(picksList));
 
-      userService.listUsers().then(usersList => this.setUsers(usersList))
+      userService.listUsers().then(usersList => this.setUsers(usersList));
+
   }
 
   setPicks = picksList => this.setState({ picksList });
   setUsers = usersList => this.setState({ usersList });
 
+ 
+
   render() {
     return (
       <div>
-        {this.state.picksList.map(
+        {this.state.picksList.sort((a,b) => new Date(b.date) - new Date(a.date)).map(
           (pick, index) =>(
               <div key={index} className="pick-snippet">
                 <div className="pick-snippet-pic">
                   <img
                     alt=""
-                    src="default-profile.png"
+                    src={pick.avatarUrl}
                     className="pick-avatar"
                   />
                 </div>

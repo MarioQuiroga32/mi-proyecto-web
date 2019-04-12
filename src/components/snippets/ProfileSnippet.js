@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 
 class ProfileSnippet extends Component {
   state = {
-    user: {
-      email: "",
-      password: "",
-      username: "",
-      name: ""
-    }
+   
   };
 
   render() {
@@ -18,7 +13,7 @@ class ProfileSnippet extends Component {
     return (
       <div className="profile-snippet">
         <div className="twPc-div">
-          <a className="twPc-bg twPc-block" />
+          <div className="twPc-bg twPc-block" />
 
           <div>
            
@@ -27,7 +22,7 @@ class ProfileSnippet extends Component {
               className="twPc-avatarLink" >
               <img
                 alt=""
-                src="default-profile.png"
+                src={user.avatarUrl}
                 className="twPc-avatarImg"
               />
             </a>
@@ -36,7 +31,7 @@ class ProfileSnippet extends Component {
               <div className="twPc-divName">
               </div>
               <span>
-              <Link to={`/profile/${user.id}`}>@{user.email}<span /></Link>
+              <Link to={`/profile/${user.id}`}>@{user.username}<span /></Link>
               </span>
             </div>
 
@@ -45,7 +40,7 @@ class ProfileSnippet extends Component {
                 <li className="twPc-ArrangeSizeFit">
                   <a href="/:id/picks" title="9.840 Tweet">
                     <span className="twPc-StatLabel twPc-block">Picks</span>
-                    <span className="twPc-StatValue">1.000</span>
+                    <span className="twPc-StatValue">12</span>
                   </a>
                 </li>
                 <li className="twPc-ArrangeSizeFit">
@@ -57,7 +52,7 @@ class ProfileSnippet extends Component {
                 <li className="twPc-ArrangeSizeFit">
                   <a href="/profile" title="1.810 Followers">
                     <span className="twPc-StatLabel twPc-block">Followers</span>
-                    <span className="twPc-StatValue">1.810</span>
+                    <span className="twPc-StatValue">7</span>
                   </a>
                 </li>
               </ul>

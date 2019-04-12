@@ -18,7 +18,6 @@ class Market extends Component {
   listStocks = () => this.state.stocks.map((stock, index) => <StockSnippet key={index} {...stock} />)
 
   render() {
-    const { stocks } = this.state
     return (
       <div className="home">
         <Navbar />

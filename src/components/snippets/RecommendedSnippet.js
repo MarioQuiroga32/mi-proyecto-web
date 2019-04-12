@@ -3,16 +3,18 @@ import { withAuthConsumer } from "../../contexts/AuthStore";
 import { withRouter } from "react-router-dom";
 import usersService from "../../services/UsersService";
 import { Link } from "react-router-dom";
-import Carousel from 'react-bootstrap';
+const CURRENT_USER_KEY = 'current-user';
 
 class ProperListRender extends Component {
   state = {
+    loggedUser: JSON.parse(localStorage.getItem(CURRENT_USER_KEY) || '{}'),
     user: {
       name: "",
       username: "",
-      id: ""
+      id: "",
     },
-    usersList: []
+    usersList: [],
+    
   };
 
   componentDidMount() {
@@ -25,17 +27,37 @@ class ProperListRender extends Component {
     usersService.follow(id)
   }
 
-  render() {
+  onClickUnFollow(id) {
+    usersService.unFollow(id)
+  }
 
+
+  
+
+  render() {
     return (
       <ul className="recommended-list">
         {this.state.usersList.map((recommendedUser, index) => (
           <div key={index} className="recommended-card">
+          <div className="recommended-pic">
+           <img
+                    alt=""
+                    src={recommendedUser.avatarUrl}
+                    className="pick-avatar"
+                  /></div>
             <Link to={`/profile/${recommendedUser.id}`}><h6>@{recommendedUser.username}</h6></Link>
+            
+            {this.state.loggedUser.following.includes(recommendedUser.id) === true ? 
+            <button className="btn-unfollow" onClick={this.onClickUnFollow.bind(this, recommendedUser.id)}>
+            Unfollow
+          </button>
+            : 
             <button className="btn-follow" onClick={this.onClickFollow.bind(this, recommendedUser.id)}>
-              Follow
-            </button>
-          </div>
+            Follow
+          </button>}</div>
+
+          
+          
         ))}
       </ul>
     );

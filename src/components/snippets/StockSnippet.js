@@ -5,7 +5,6 @@ import {Line} from 'react-chartjs-2';
 import 'chartjs-plugin-annotation';
 import StockService from "../../services/StockService";
 
-const date = new Date();
 
 
 const options = {

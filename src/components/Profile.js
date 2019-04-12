@@ -2,32 +2,37 @@ import React, { Component } from "react";
 import Navbar from "./misc/NavBar";
 import RecommendedSnippet from "./snippets/RecommendedSnippet";
 import ProfilePickSnippet from "./snippets/ProfilePickSnippet";
+import ProfileSnippet from "./snippets/ProfileSnippet";
+import HotStocksSnippet from "./snippets/HotStocksSnippet";
+import ColdStocksSnippet from "./snippets/ColdStocksSnippet";
 
 
 class Profile extends Component {
   state = {
+    pick: {
+      user: "",
+      username: "",
+      action: "",
+      description: ""
+    },
+    user: {
+      id: "",
+      username: "",
+      avatarUrl: ""
+    },
     showModal: false
   };
 
   render() {
+    console.log(this.props)
     return (
       <div className="profile">
       <Navbar />
-      
-      <div className="thumbnail">
-      <div className="profile-avatar"> 
-      <a title="Mert S. Kaplan" href="/editprofile" className="avatar">
-      <img alt="Mert S. Kaplan" src="http://ecuciencia.utc.edu.ec/media/foto/default-user_x5fGYax.png" className="avatar"/>
-    </a>
-      </div>
-      <div className="thumbnail-button btn">
-      <button>Follow</button>
-      </div>
-      </div>
-
-
       <div className="profile-columns">
-      <div className="profile-left"></div>
+      <div className="profile-left">
+      <ProfileSnippet/>
+      <HotStocksSnippet/>
+      </div>
      
       <div className="profile-center">
       <ProfilePickSnippet/>
@@ -35,6 +40,7 @@ class Profile extends Component {
       
       <div className="profile-right">
       <RecommendedSnippet/>
+      <ColdStocksSnippet/>
       </div>
       </div>
      

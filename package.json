@@ -12,6 +12,7 @@
     "chart.js": "^2.8.0",
     "chartjs-plugin-annotation": "^0.5.7",
     "font-awesome": "^4.7.0",
+    "homepage": "https://marioquiroga32.github.io/pickster/",
     "i": "^0.3.6",
     "jquery": "^3.3.1",
     "npm": "^6.9.0",
@@ -22,8 +23,7 @@
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "react-select": "^2.4.2",
-    "homepage": "https://marioquiroga32.github.io/pickster/"
+    "react-select": "^2.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

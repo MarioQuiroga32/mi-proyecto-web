@@ -7,12 +7,15 @@ import ColdStocksSnippet from "./snippets/ColdStocksSnippet";
 import PickSnippet from "./snippets/PickSnippet";
 
 
+
+
 class Home extends Component {
   state = {
     showModal: false
   };
 
   render() {
+    console.log(this.state.user)
     return (
       <div className="home">
         

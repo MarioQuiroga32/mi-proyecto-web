@@ -20,10 +20,10 @@ export default class Modal extends Component {
       selectedOption: ""
     },
     startDate: new Date(),
-    showModal: false
+    showModal: true
   };
 
-  toggleModalVisibility = () => this.setState({ showModal: !this.state.showModal });
+  toggleModalVisibility = () => this.setState({ showModal: false });
 
   handleSelectChange = selectedOption => {
     const newPick = {...this.state.pick, stock: selectedOption.value}
@@ -56,6 +56,7 @@ export default class Modal extends Component {
   };
 
   render() {
+    console.log(this.showModal)
     return (
       <div>
         {this.showModal}

@@ -5,11 +5,10 @@ import authService from "../../services/AuthService";
 import { withRouter } from "react-router-dom";
 import Modal from "./Modal";
 import usersService from "../../services/UsersService";
-import Select from "react-select";
 
 class NavBar extends Component {
   state = {
-    showModal: false,
+    // showModal: false,
     collapsed: true,
     usersList: [],
     select: {
@@ -26,9 +25,7 @@ class NavBar extends Component {
   setUsers = usersList => this.setState({ usersList });
 
   toggleModalVisibility = () =>
-    this.setState({ showModal: !this.state.showModal }, () =>
-      console.info(this.state)
-    );
+    this.setState({ showModal: !this.state.showModal });
 
     toggleNavbar = () => {
       this.setState({
@@ -52,8 +49,6 @@ class NavBar extends Component {
  
 
   render() {
-    let userNames = this.state.usersList.map(a => a.username)
-    console.log(userNames)
     const { showModal } = this.state;
 
     const { user } = this.props;
@@ -80,15 +75,6 @@ class NavBar extends Component {
               <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/rank">Rank</NavLink></li>
             </ul>
 
-            {/* <Select
-              name="stock"
-              className="select-navbar"
-              placeholder="Select a stock"
-              onChange={this.handleSelectChange}
-              options={userNames}
-              value={this.state.select.selectedOption.value}
-            /> */}
-
             <form className="form-inline active-cyan-3 active-cyan-4">
             <i className="fa fa-search" aria-hidden="true"></i>
             <input className="form-control form-control-sm ml-3 w-75" type="text" list="somethingelse" placeholder="Search" aria-label="Search"/>
@@ -109,7 +95,7 @@ class NavBar extends Component {
               )}
               {user.email && (
                 <Fragment>
-                  <li className="nav-item"><a href="profile/:{user.id}" className="nav-link">Profile</a></li>
+                  <li className="nav-item"><a href="/editprofile" className="nav-link">Profile</a></li>
                   <li className="nav-item"><a href="/" className="nav-link" onClick={this.handleLogout}>Logout</a></li>
                 </Fragment>
               )}

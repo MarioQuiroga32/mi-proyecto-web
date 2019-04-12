@@ -9,7 +9,7 @@ class EditProfile extends Component {
       email: '',
       password: '',
       portfolio: '',
-      avatarURL: 'http://ecuciencia.utc.edu.ec/media/foto/default-user_x5fGYax.png',
+      avatarUrl: 'http://ecuciencia.utc.edu.ec/media/foto/default-user_x5fGYax.png',
       avatar: ''
     },
     errors: {},
@@ -83,11 +83,15 @@ class EditProfile extends Component {
     const { errors, user, touch } =  this.state;
 
     return (
+      <div className="login">
+      <div className="left-login"></div>
+      <div className="right-login">
+
       <div className="box mx-auto">
         <div className="row">
           <i className="fa fa-sign-out btn-logout" onClick={this.handleLogout}></i>
           <div className="col-6">
-            <h3>Profile</h3>
+            <h3> Edit your profile</h3>
             <form id="profile-form" className="mt-4" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label>Email</label>
@@ -102,25 +106,16 @@ class EditProfile extends Component {
                 <input type="password" name="password" className={`form-control ${touch.password && errors.password ? 'is-invalid' : ''}`} onChange={this.handleChange} onBlur={this.handleBlur} value={user.password} />
                 <div className="invalid-feedback">{ errors.password }</div>
               </div>
-              <div className="form-group">
-                <label>Portfolio</label>
-                <input 
-                  type="text" 
-                  name="portfolio" 
-                  value={user.portfolio}
-                  className={`form-control ${this.isValidPortfolio(touch, errors)}`} 
-                  onChange={this.handleChange} 
-                  onBlur={this.handleBlur} /> 
-              </div>
             </form>
           </div>
           <div className="col-6 pt-4">
-            <label htmlFor="avatar" className="avatar"><img src={user.avatar ? URL.createObjectURL(user.avatar) : user.avatarURL} className="rounded mb-3" alt="Cinque Terre" /></label>
+            <label htmlFor="avatar" className="avatar"><img src={user.avatar ? URL.createObjectURL(user.avatar) : user.avatarUrl} className="rounded mb-3 edit-pic" alt="Cinque Terre" /></label>
             <input type="file" id="avatar"  name="avatar" onChange={this.handleChange} />
             <button className="btn btn-white" form="profile-form" type="submit" disabled={!this.isValid()}>Update profile</button>
-            <p className="mt-5"><small>This user is able to upload a new profile photo, using NodeJS and Multer uploader.</small></p>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     );
   }
