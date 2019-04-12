@@ -22,6 +22,7 @@ body {
   color: #c5beba ;
 }
 
+
 .navbar-brand {
   color: #38A1F2 !important;
   margin-left: 20px;
@@ -29,12 +30,16 @@ body {
 }
 
 input {
-  background-color: #c5beba !important;
-  border-color: #c5beba;
+  margin-right: 15px;
 }
 
 .select-navbar {
   width: 200px; 
+}
+.style1{
+  background-color:red;
+  color:white;
+  font-size:44px;
 }
 
 .nav-link {
@@ -331,7 +336,9 @@ ul.twPc-Arrange {
 .recommended-pic {
   border-radius: 50%;
   height: 50px;
-  width: 50px
+  width: 50px;
+  background-color: #113743;
+  border: #38444D
 }
 
 .recommended-card h6 {
@@ -423,14 +430,6 @@ ul.twPc-Arrange {
   border: 1px solid #38444D
 }
 
-.rank-snippet {
-  height: 200px;
-  width: 640px;
-  margin-top: 10px;
-  background-color: #15202B;
-  border-radius: 2px;
-  border: 1px solid #38444D
-}
 
 .thumbnail {
   width: 100%;
@@ -658,6 +657,7 @@ ul.twPc-Arrange {
   width: 50px;
 }
 
+
 i {
   color: #38A1F2
 }
@@ -687,7 +687,7 @@ body {
 }
 
 .navbar input {
-  margin: 10px
+  margin-bottom: 12px
 }
 
 .container-fluid {
@@ -762,7 +762,7 @@ body {
     padding: 5px;
     position: relative;
     border: 1px solid #38444D;
-    font-size: 13px;
+    font-size: 12px;
   }
   
   .stock-snippet {
@@ -780,8 +780,26 @@ body {
     margin-top: 10px;
     background-color: #15202B;
     border-radius: 2px;
-    border: 1px solid #38444D
+    padding: 5px;
+    position: relative;
+    border: 1px solid #38444D;
+    font-size: 13px;
   }
+
+  .rank-snippet-pic img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: 5px
+  }
+
+  .rank-avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+  }
+
+  
   
   .thumbnail {
     width: 100%;
@@ -934,11 +952,10 @@ body {
   }
   
   .pick-snippet-text {
-    border: 0.5px solid #38444D;
     border-radius: 2px;
     width: 89vw;
     height: 80px;
-    margin-top: 55px;
+    margin-top: 58px;
     margin-left: 5px;
     margin-right: 5px;
     position: absolute;

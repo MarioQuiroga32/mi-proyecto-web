@@ -5,6 +5,8 @@ import authService from "../../services/AuthService";
 import { withRouter } from "react-router-dom";
 import Modal from "./Modal";
 import usersService from "../../services/UsersService";
+import {Typeahead} from 'react-bootstrap-typeahead';
+
 
 class NavBar extends Component {
   state = {
@@ -19,7 +21,7 @@ class NavBar extends Component {
 
 
   componentDidMount() {
-    usersService.listUsers().then(usersList => this.setUsers(usersList));
+    usersService.listUsers().then(usersList => this.setUsers(usersList.map(x => x.username)));
   }
 
   setUsers = usersList => this.setState({ usersList });
@@ -49,6 +51,7 @@ class NavBar extends Component {
  
 
   render() {
+    console.log(this.state.usersList)
     const { showModal } = this.state;
 
     const { user } = this.props;
@@ -75,10 +78,16 @@ class NavBar extends Component {
               <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/rank">Rank</NavLink></li>
             </ul>
 
+           
+
             <form className="form-inline active-cyan-3 active-cyan-4">
-            <i className="fa fa-search" aria-hidden="true"></i>
-            <input className="form-control form-control-sm ml-3 w-75" type="text" list="somethingelse" placeholder="Search" aria-label="Search"/>
-    
+            <Typeahead
+              minLength= "2"
+              placeholder="Search..."
+               onChange={(selected) => {
+                 
+              }}
+                options={this.state.usersList}/>
        
           </form>
 
