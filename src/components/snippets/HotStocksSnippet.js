@@ -45,7 +45,7 @@ class HotStocksSnippet extends Component {
     console.log(this.state.apple)
     return (
       <div className="hotstocks">
-      <div className="hotstocks-title">Hot Stocks</div>
+      <div className="hotstocks-title">Hot Stocks (volume)</div>
       <div className="hotstock">
       <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apple</div>
       <div className="stock hotstock-volume">{this.state.apple}</div>
