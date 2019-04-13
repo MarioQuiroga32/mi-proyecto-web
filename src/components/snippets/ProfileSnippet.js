@@ -51,7 +51,7 @@ class ProfileSnippet extends Component {
                 </li>
                 <li className="twPc-ArrangeSizeFit">
                   <a href="/profile" title="1.810 Followers">
-                    <span className="twPc-StatLabel twPc-block">Followers</span>
+                    <span className="twPc-StatLabel twPc-block">{user.followers.length}</span>
                     <span className="twPc-StatValue">7</span>
                   </a>
                 </li>
