@@ -1,5 +1,5 @@
 {
-  "main.css": "/mi-proyecto-web/static/css/main.6972a138.chunk.css",
+  "main.css": "/mi-proyecto-web/static/css/main.d8c5ac73.chunk.css",
   "main.js": "/mi-proyecto-web/static/js/main.ded48e12.chunk.js",
   "main.js.map": "/mi-proyecto-web/static/js/main.ded48e12.chunk.js.map",
   "runtime~main.js": "/mi-proyecto-web/static/js/runtime~main.8aab1440.js",
@@ -8,10 +8,10 @@
   "static/js/2.c0a53fe1.chunk.js": "/mi-proyecto-web/static/js/2.c0a53fe1.chunk.js",
   "static/js/2.c0a53fe1.chunk.js.map": "/mi-proyecto-web/static/js/2.c0a53fe1.chunk.js.map",
   "index.html": "/mi-proyecto-web/index.html",
-  "precache-manifest.a9a583f5115c666fed6e33a4ea80adce.js": "/mi-proyecto-web/precache-manifest.a9a583f5115c666fed6e33a4ea80adce.js",
+  "precache-manifest.eb6b1e87fdbd8784214a46e9a2d94312.js": "/mi-proyecto-web/precache-manifest.eb6b1e87fdbd8784214a46e9a2d94312.js",
   "service-worker.js": "/mi-proyecto-web/service-worker.js",
   "static/css/2.4cdb4871.chunk.css.map": "/mi-proyecto-web/static/css/2.4cdb4871.chunk.css.map",
-  "static/css/main.6972a138.chunk.css.map": "/mi-proyecto-web/static/css/main.6972a138.chunk.css.map",
+  "static/css/main.d8c5ac73.chunk.css.map": "/mi-proyecto-web/static/css/main.d8c5ac73.chunk.css.map",
   "static/media/index.css": "/mi-proyecto-web/static/media/New Project.a4b26663.jpg",
   "static/media/font-awesome.min.css": "/mi-proyecto-web/static/media/fontawesome-webfont.fee66e71.woff"
 }
