@@ -104,7 +104,7 @@ class NavBar extends Component {
               )}
               {user.email && (
                 <Fragment>
-                  <li className="nav-item"><a href="/editprofile" className="nav-link">Profile</a></li>
+                  <NavLink className="nav-link" activeClassName="active" to="/editprofile">Profile</NavLink>
                   <li className="nav-item"><a href="/" className="nav-link" onClick={this.handleLogout}>Logout</a></li>
                 </Fragment>
               )}
