@@ -74,7 +74,7 @@ export default class Modal extends Component {
               data-dismiss="modal"
               aria-label="Close"
             >
-              <span aria-hidden="true">&times;</span>
+              {/* <span aria-hidden="true">&times;</span> */}
             </button>
           </div>
 
