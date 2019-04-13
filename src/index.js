@@ -8,19 +8,14 @@ import './index.css';
 
 
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthStore } from './contexts/AuthStore';
 import {HashRouter} from 'react-router-dom'
 
 
 ReactDOM.render(
   <HashRouter>
-  {/* <Router basename={process.env.PUBLIC_URL}> */}
     <AuthStore>
       <App />
     </AuthStore>
-  {/* </Router> */}
-  </HashRouter>
- 
-  , 
+  </HashRouter>, 
   document.getElementById('root'));

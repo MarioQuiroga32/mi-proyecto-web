@@ -816,8 +816,9 @@ body {
   
   .profile-left {
     order: 1;
-    width: 340px;
+    width: 0px;
     height: 250px;
+    display: none
     
   }
   .profile-center {
@@ -825,6 +826,7 @@ body {
     width: 680px;
     height: 1000px;
     margin-left: 10px;
+
   }
   .profile-right {
     order: 3;
