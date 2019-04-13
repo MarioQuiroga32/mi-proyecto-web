@@ -690,6 +690,23 @@ body {
   margin-bottom: 12px
 }
 
+.modal-content {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  width: 90vw;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+  margin-right: 0px;
+  margin-left: -98px;
+}
+
 .container-fluid {
   width: 100%
 }
@@ -825,8 +842,6 @@ body {
     order: 2;
     width: 680px;
     height: 1000px;
-    margin-left: 10px;
-
   }
   .profile-right {
     order: 3;
