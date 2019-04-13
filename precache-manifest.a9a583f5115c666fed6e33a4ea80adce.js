@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "48a8b392b39450a9d404",
+    "revision": "d2a4416c020d1a5587e6",
     "url": "/mi-proyecto-web/static/css/main.6972a138.chunk.css"
   },
   {
@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "48a8b392b39450a9d404",
-    "url": "/mi-proyecto-web/static/js/main.7c7c48dd.chunk.js"
-  },
-  {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/mi-proyecto-web/static/media/fontawesome-webfont.674f50d2.eot"
+    "revision": "d2a4416c020d1a5587e6",
+    "url": "/mi-proyecto-web/static/js/main.ded48e12.chunk.js"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/mi-proyecto-web/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/mi-proyecto-web/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/css/2.4cdb4871.chunk.css"
   },
   {
-    "revision": "75cefaaeb2e5a65b17cf4eca482840bf",
+    "revision": "8727c3398a243edcba04ccdf460487ef",
     "url": "/mi-proyecto-web/index.html"
   }
 ];
