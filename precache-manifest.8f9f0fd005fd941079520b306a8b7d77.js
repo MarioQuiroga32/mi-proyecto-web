@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "d668f15a2f1b9edcfcc8",
+    "revision": "44d1de97fc98f09b83e2",
     "url": "/mi-proyecto-web/static/css/main.d8c5ac73.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "d668f15a2f1b9edcfcc8",
-    "url": "/mi-proyecto-web/static/js/main.c7dfd1c4.chunk.js"
+    "revision": "44d1de97fc98f09b83e2",
+    "url": "/mi-proyecto-web/static/js/main.4e65e434.chunk.js"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/mi-proyecto-web/static/css/2.4cdb4871.chunk.css"
   },
   {
-    "revision": "84c2789d42a1d80a762ec258a06506ab",
+    "revision": "50d65817f01f1dc2a531a728290d97d4",
     "url": "/mi-proyecto-web/index.html"
   }
 ];
