@@ -10,7 +10,7 @@ import {Typeahead} from 'react-bootstrap-typeahead';
 
 class NavBar extends Component {
   state = {
-    // showModal: false,
+    showModal: false,
     collapsed: true,
     usersList: [],
     select: {
@@ -61,7 +61,7 @@ class NavBar extends Component {
 
     return (
       <div>
-        {showModal && <Modal />}
+        {showModal && <Modal toggleModalVisibility={this.toggleModalVisibility} />}
         <nav className="navbar navbar-expand-lg">
           
           <Link className="navbar-brand" to="/home">Pickster</Link>
