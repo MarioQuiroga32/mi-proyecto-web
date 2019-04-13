@@ -13,7 +13,7 @@ class ColdStocksSnippet extends Component {
     },
     stocksList: [],
     trv: "",
-    mmm: "",
+    ibm: "",
     gs: "",
     mcd: "",
     axp: ""
@@ -27,7 +27,7 @@ class ColdStocksSnippet extends Component {
     StockService.listStocks()
       .then(data => {
         this.setState({ trv: data['trv'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
-        this.setState({ mmm: data['ibm'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
+        this.setState({ ibm: data['ibm'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
         this.setState({ gs: data['gs'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
         this.setState({ mcd: data['mcd'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
         this.setState({ axp: data['axp'].map(x => x.volume).slice(-1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") })
@@ -43,8 +43,8 @@ class ColdStocksSnippet extends Component {
       <div className="stock coldstock-volume">{this.state.trv}</div>
       </div>
       <div className="hotstock">
-      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3M</div>
-      <div className="stock coldstock-volume">{this.state.mmm}</div>
+      <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IBM</div>
+      <div className="stock coldstock-volume">{this.state.ibm}</div>
       </div>
       <div className="hotstock">
       <div className="stock">&nbsp;&nbsp;&nbsp;&nbsp;Goldman Sachs</div>
