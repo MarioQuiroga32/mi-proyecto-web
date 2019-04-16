@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mi-proyecto-web/precache-manifest.a21d5ac0297abc89d7bb64fb2c21fc78.js"
+  "/pickster/precache-manifest.cadc2df30d947b7fda038b9dcd66a95d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/mi-proyecto-web/index.html", {
+workbox.routing.registerNavigationRoute("/pickster/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
